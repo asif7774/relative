@@ -1,0 +1,23 @@
+/*
+*
+Capx
+*                                                           
+*/ 
+
+
+//Core Variables
+@import "./variables.scss";
+
+//Grid System and some useful utilities
+
+@import "./plugins/grid/grid.scss";
+
+
+//Partials elements
+@import "./partials/navbar/navbar.scss";
+
+//Utilities
+@import "./utilities/fonts/fonts.scss";
+
+@import "./custom.scss";
+

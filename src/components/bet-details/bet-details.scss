@@ -1,0 +1,98 @@
+@import '../../assets/scss/variables.scss';
+
+.betdetails-wrapper{
+    padding-top: 20px;
+    .betdetails-box{
+        background: $background-primary;
+        padding: 50px 80px 60px;
+        width: 100%;
+        max-width: 940px;
+        margin: auto;
+        border-radius: 30px;
+        @media screen and (max-width:991px) {
+            padding: 50px 40px 40px;
+        }
+        .betdetails-head{
+            text-align: center;
+            margin-bottom: 30px;
+            h1{
+                font-size: 3.2rem;
+                color: $text-color-secondary;
+                margin-bottom: 5px;
+            }
+            h3{
+                text-transform: uppercase;
+                font-size: $font-size-base + 4;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-align: center;
+                margin-bottom: 4px;
+            }
+            p{
+                font-size: $font-size-base + 6;
+                color: $text-color-primary;
+            }
+        }
+        .betdetails-bottom{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @media screen and (max-width:567px) {
+                display: block;
+                text-align: center;
+            }
+            .center-arrow{
+                .icon{
+                    width: 50px;
+                    fill: rgba($text-color-secondary, 0.5);
+                }
+            }
+            .betdetails-card{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $background-secondary;
+                width: 100%;
+                max-width: 280px;
+                border-radius: 14px;
+                padding: 20px;
+                @media screen and (max-width:567px) {
+                    margin: auto;
+                }
+                .betdetails-card-inner{
+                    text-align: center;
+                    .images{
+                        width: 120px;
+                        height: 120px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-bottom: 15px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        @media screen and (max-width:767px) {
+                            width: 80px;
+                            height: 80px;
+                        }
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    p{
+                        margin-bottom: 5px;
+                        font-size: $font-size-base + 5;
+                        color: $text-color-primary;
+                    }
+                }
+            }
+        }
+        .betdetails-section{
+            text-align: center;
+            padding-top: 40px;
+            P{
+                font-size: $font-size-base + 4;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

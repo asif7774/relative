@@ -1,0 +1,229 @@
+@import "../../../assets/scss/variables.scss";
+
+.home-header-wrapper{
+    width: 100%;
+    @media screen and (max-width:991px){
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 9;
+        background: $white;
+    }
+    .home-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+        @media screen and (max-width:1199px){
+            padding:14px 16px;
+            justify-content: space-between;
+        }
+        .siderbar-toggle{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 25px;
+            position: absolute;
+            right: 0;
+            top: 19px;
+            z-index: 2;
+            .icon{
+                fill: $secondary-color;
+                width: 22px !important;
+            }
+        }
+        & .logo-wrapper{
+            display: inline-flex;
+            align-items: flex-start;
+            justify-content: flex-start;     
+            max-width: 154px;  
+            @media screen and (max-width:991px){
+                width:100px;
+            } 
+            & .logo{
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                & img{
+                    width: 100%;
+                }
+                & svg{
+                    fill: $white;
+                    width:130px;
+                    height: auto;
+                    @media screen and (max-width:991px){
+                        width:120px;
+                    }
+                }
+            }
+        } 
+        & .header-menus{
+            width: 100%;
+            margin-left: 120px;
+            .ant-menu{
+                font-weight: normal;
+                background: none;
+                display: flex;
+                align-items: center;
+                border: 0;
+                justify-content: flex-end;
+                li{
+                    &.ant-menu-item{
+                        height: 20px;
+                        line-height: 20px;
+                        margin-top: 8px;
+                        margin-bottom: 8px;
+                        background: none;
+                        font-size: $font-size-base + 1;
+                        letter-spacing: 1px;
+                        font-weight: 600;
+                        a{
+                            color: $text-color-secondary;
+                            text-transform: uppercase;
+                            &.active{
+                                color: $text-color-primary;
+                            }
+                        }
+                        &.ant-menu-item-selected {
+                            color: $text-color-primary; 
+                            a{
+                                color: $text-color-primary;
+                                &:hover{
+                                    color: $text-color-primary !important; 
+                                }
+                                &.active{
+                                    color: $text-color-primary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & .header-right{
+          margin-left: 30px;
+          @media screen and (max-width:991px){
+              margin-left: 0;
+              margin-right: 20px;
+          }
+          @media screen and (max-width:567px){
+            .ant-btn{
+                padding: 0 18px;
+                font-size: $font-size-base - 2;
+                margin-left: 0;
+                margin-right: 20px;
+                letter-spacing: 1px;
+            }
+          }
+        }
+    }
+}
+
+ 
+ 
+.main-sidebar{    
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100vh;
+    z-index: 1000;
+    box-shadow: 2px 2px 70px 0 rgba(0, 0, 0, 0.8);   
+    background: $primary-color;
+    backface-visibility: hidden;
+    perspective: 1000;
+    
+    &:not(.ant-layout-sider-collapsed){
+        flex: 0 0 325px !important;
+        max-width: 325px !important;
+        min-width: initial !important;
+        width: 100% !important;
+        @media screen and (max-width:350px){
+            max-width: 280px !important;
+        }
+    }
+    & .ant-layout-sider-children{
+        display: flex;
+        flex-direction: column;
+        & .ant-menu{
+            border: none;
+        }
+    }
+    & .sidebar-upper{
+        padding: 15px 20px 15px;
+        position: relative;
+        color: $text-color-primary;
+        & .close{
+            fill: #dc0100;
+            width: 14px;
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            z-index: 10;
+        }
+        & .ant-menu{
+            background: none !important;
+            color: $text-color-primary; 
+            position: relative;
+            z-index: 9;            
+            & .ant-menu-item, & .ant-menu-submenu-title{
+                padding:0 !important;
+                margin: 0;
+                height: auto;
+                line-height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;  
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+                a{
+                    color: rgba($white, 0.5);
+                    &.active{
+                        color: $white;
+                    }
+                }
+            }
+            & .ant-menu-item.ant-menu-item-selected{
+                background-color: transparent;
+                &::after{display: none;}
+            }
+            & .ant-menu-submenu-title .ant-menu-submenu-arrow{                
+                display: none;
+            }
+            & .ant-menu-submenu-title span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                & svg{                
+                    margin-left: 8px;
+                    width:10px;
+                }
+            } 
+            & .ant-menu-submenu-active, & .ant-menu-submenu-selected{
+                & .ant-menu-submenu-title svg{
+                    fill: $primary-color;
+                    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+                }
+            }
+            & .ant-menu-submenu-open .ant-menu-submenu-title svg{
+                transform: rotateX(180deg);
+            }
+            & .ant-menu-submenu > .ant-menu > .ant-menu-item{
+                padding-left: 10px !important;                
+            }
+            
+        }
+    }
+}
+
+body.sidebar-open{
+    overflow: hidden;
+    .sidebar-backdrop{
+        position: fixed;
+        z-index: 990;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+}

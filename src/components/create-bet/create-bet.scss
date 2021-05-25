@@ -1,0 +1,40 @@
+@import '../../assets/scss/variables.scss';
+
+.createbet-wrapper{
+    padding-top: 20px;
+    .createbet-box{
+        background: $background-primary;
+        padding: 50px 80px 60px;
+        width: 100%;
+        max-width: 940px;
+        margin: auto;
+        border-radius: 30px;
+        @media screen and (max-width:991px) {
+            padding: 50px 30px 40px;
+        }
+        h3{
+            text-transform: uppercase;
+            font-size: $font-size-base + 4;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .createbet-form{
+            margin-top: 20px;
+            .createbet-form-row{
+                align-items: center;
+                margin-top: 16px;
+                margin-bottom: 16px;
+                .left-label{
+                    align-items: center;
+                    display: flex;
+                    label{
+                        font-size: $font-size-base + 4;
+                        color: $text-color-secondary;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@import '../../variables.scss';
+
+.submenu-title-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & .arrow{
+        width: 11px;
+        height: auto;
+        fill: #fff;
+        opacity: 0.6;
+        margin-left: 8px;
+    }
+}
+.ant-menu-horizontal{
+    line-height: 43px;
+    letter-spacing: 1.8px;
+    border-bottom:none;
+    font-weight: bold;
+    font-size: $font-size-sm;
+    & .ant-menu-submenu-active{
+        border-bottom-color:transparent ;
+    }
+}
+
+.ant-menu-submenu-popup{
+    background-color: transparent;
+}

@@ -1,0 +1,74 @@
+@font-face {
+     font-family: 'SegoeScript';
+     src: url('../../../fonts/SegoeScript.eot');
+     src: url('../../../fonts/SegoeScript.eot?#iefix') format('embedded-opentype'),
+          url('../../../fonts/SegoeScript.svg#SegoeScript') format('svg'),
+          url('../../../fonts/SegoeScript.ttf') format('truetype'),
+          url('../../../fonts/SegoeScript.woff') format('woff'),
+          url('../../../fonts/SegoeScript.woff2') format('woff2');
+     font-weight: 400;
+     font-style: normal;
+}
+@font-face {
+  font-family: 'SegoeScript';
+  src: url('../../../fonts/SegoeScript-Bold.eot');
+  src: url('../../../fonts/SegoeScript-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../../../fonts/SegoeScript-Bold.svg#SegoeScript-Bold') format('svg'),
+       url('../../../fonts/SegoeScript-Bold.ttf') format('truetype'),
+       url('../../../fonts/SegoeScript-Bold.woff') format('woff'),
+       url('../../../fonts/SegoeScript-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvertaStd';
+    src: url('../../../fonts/AvertaStd-Bold.eot');
+    src: url('../../../fonts/AvertaStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../../../fonts/AvertaStd-Bold.woff2') format('woff2'),
+        url('../../../fonts/AvertaStd-Bold.woff') format('woff'),
+        url('../../../fonts/AvertaStd-Bold.ttf') format('truetype'),
+        url('../../../fonts/AvertaStd-Bold.svg#AvertaStd-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvertaStd';
+    src: url('../../../fonts/AvertaStd-Regular.eot');
+    src: url('../../../fonts/AvertaStd-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../../fonts/AvertaStd-Regular.woff2') format('woff2'),
+        url('../../../fonts/AvertaStd-Regular.woff') format('woff'),
+        url('../../../fonts/AvertaStd-Regular.ttf') format('truetype'),
+        url('../../../fonts/AvertaStd-Regular.svg#AvertaStd-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvertaStd';
+    src: url('../../../fonts/AvertaStd-Semibold.eot');
+    src: url('../../../fonts/AvertaStd-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('../../../fonts/AvertaStd-Semibold.woff2') format('woff2'),
+        url('../../../fonts/AvertaStd-Semibold.woff') format('woff'),
+        url('../../../fonts/AvertaStd-Semibold.ttf') format('truetype'),
+        url('../../../fonts/AvertaStd-Semibold.svg#AvertaStd-Semibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvertaStd';
+    src: url('../../../fonts/AvertaStd-Light.eot');
+    src: url('../../../fonts/AvertaStd-Light.eot?#iefix') format('embedded-opentype'),
+        url('../../../fonts/AvertaStd-Light.woff2') format('woff2'),
+        url('../../../fonts/AvertaStd-Light.woff') format('woff'),
+        url('../../../fonts/AvertaStd-Light.ttf') format('truetype'),
+        url('../../../fonts/AvertaStd-Light.svg#AvertaStd-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}

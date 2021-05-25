@@ -1,0 +1,97 @@
+@import '../../assets/scss/variables.scss';
+
+.home-section{
+    padding-top: 30px;
+    min-height: calc(100vh - 85px);
+    .home-upper{
+        border-bottom: 2px solid $border-color-base;
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+    }
+    .bat-lists{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 25px;
+        @media screen and (max-width:767px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        .bat-box{
+            background: $background-primary;
+            padding: 20px;
+            border-radius: 20px;
+            @media screen and (max-width:575px) {
+                padding: 12px;
+            }
+            .box-upper{
+                display: flex;
+                .assets-coloum{
+                    width: 100%;
+                    text-align: center;
+                    p{
+                        margin-bottom: 0;
+                    }
+                    .icons{
+                        width: 50px;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: auto auto 8px auto;
+                        @media screen and (max-width:575px) {
+                            width: 40px;
+                            height: 40px;
+                        }
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .box-bottom{
+                text-align: center;
+                margin-top: 12px;
+                color: $text-color-secondary;
+            }
+        }
+    }
+    .home-left-bttom{
+        h4{
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: $font-size-base + 2;
+        }
+        .bet-amount{
+            text-align: center;
+            letter-spacing: 2px;
+        }
+    }
+    .home-right{
+        background: $background-primary;
+        height: 100%;
+        position: absolute;
+        width: 33vw;
+        border-radius: 40px 0 0 40px;
+        display: flex;
+        flex-direction: column;
+        padding: 40px 40px;
+        right: -9vw;
+        @media screen and (min-width:1450px) {
+            width: 100%;
+            right: -15%;
+        }
+        @media screen and (max-width:991px) {
+            position: inherit;
+            width: 100%;
+            right: 0;
+            border-radius: 20px;
+        }
+        .create-bet-btn{
+            margin-top: auto;
+            max-width: 220px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

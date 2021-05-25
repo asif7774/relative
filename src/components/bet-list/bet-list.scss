@@ -1,0 +1,81 @@
+@import '../../assets/scss/variables.scss';
+
+.betlist-wrapper{
+    padding-top: 30px;
+    .bet-list-upper{
+        h3{
+            font-size: $font-size-base + 4;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+    }
+    .bets-listscroll{
+        height: calc(100vh - 200px) !important;
+    }
+    .bat-lists-wrape{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 25px;
+        @media screen and (max-width:991px) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+        @media screen and (max-width:767px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        a{
+            color: $text-color-secondary;
+        }
+        .bat-box{
+            background: $background-primary;
+            padding: 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            @media screen and (max-width:576px) {
+                padding:15px 10px;
+            }
+            .box-upper{
+                display: flex;
+                .assets-coloum{
+                    width: 100%;
+                    text-align: center;
+                    p{
+                        margin-bottom: 0;
+                        color: $text-color-primary;
+                    }
+                    .icons{
+                        width: 50px;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: auto auto 8px auto;
+                        transition: all 0.1s;
+                        @media screen and (max-width:576px) {
+                            width: 40px;
+                            height: 40px;
+                        }
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            &:hover{
+                box-shadow: -2px 4px 1px rgba(0,0,0,0.1);
+                .box-upper{
+                    .assets-coloum{
+                        .icons{
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+            .box-bottom{
+                text-align: center;
+                margin-top: 12px;
+                color: $text-color-secondary;
+            }
+        }
+    }
+}
