@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, SvgIcon } from '../common';
 import { Button } from 'antd';
+import { Link } from 'react-router-dom';
 import './bet-details.scss';
-
-// images
-import IconImage from '../../assets/images/icon.png';
 
 class BetDetailsView extends Component {
     componentDidMount() {
@@ -14,46 +11,43 @@ class BetDetailsView extends Component {
         return (
             <React.Fragment>
                 <div className="betdetails-wrapper">
-                    <Container>
-                        <Row>
-                            <Col>
-                                <div className="betdetails-box">
-                                    <div className="betdetails-head">
-                                        <h3>BET DETAILS</h3>
-                                        <h1>$ 12,000</h1>
-                                        <p>Bet Amount</p>
-                                    </div>
-                                    <div className="betdetails-bottom">
-                                        <div className="betdetails-card">
-                                            <div className="betdetails-card-inner">
-                                                <div className="images">
-                                                    <img alt={IconImage} src={IconImage} />
-                                                </div>
-                                                <p>Asset A</p>
-                                                <p>Qty: 345 coins</p>
-                                            </div>
+                    <div className="betdetails-box">
+                        <h3>Bet Details</h3>
+                        <div className="betdetails-boxinner">
+                            <div className="betdetails-head">
+                                <h1>$ 12,000</h1>
+                                <p>Bet Amount</p>
+                            </div>
+                            <div className="betdetails-bottom">
+                                <div className="betdetails-card">
+                                    <div className="betdetails-card-inner">
+                                        <div className="images">
+                                            <i className="cf cf-edu"></i>
                                         </div>
-                                        <div className="center-arrow">
-                                            <SvgIcon name="arrows" viewbox="0 0 512.001 512.001" />
+                                        <div className="right">
+                                            <p>Small Case</p>
+                                            <small>345 Coins</small>
                                         </div>
-                                        <div className="betdetails-card">
-                                            <div className="betdetails-card-inner">
-                                                <div className="images">
-                                                    <img alt={IconImage} src={IconImage} />
-                                                </div>
-                                                <p>Asset A</p>
-                                                <p>Qty: 345 coins</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="betdetails-section">
-                                        <p>Deposit 210 Asset B Coins</p>
-                                        <Button type="primary" className="px-5">MATCH BET</Button>
                                     </div>
                                 </div>
-                            </Col>
-                        </Row>
-                    </Container>
+                                <div className="betdetails-card">
+                                    <div className="betdetails-card-inner">
+                                        <div className="images">
+                                            <i className="cf cf-eth"></i>
+                                        </div>
+                                        <div className="right">
+                                            <p>Ethereum</p>
+                                            <small>210 Coins</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="betdetails-action">
+                                <p>Deposit 210 Ethereum coins</p>
+                                <Link to="/bet-list"><Button type="primary" block>Match Bet</Button></Link>
+                            </div>
+                       </div>
+                    </div>
                 </div>
             </React.Fragment>
         )

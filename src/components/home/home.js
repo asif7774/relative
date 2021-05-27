@@ -1,131 +1,166 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from '../common';
+import { Container, Row, Col, SvgIcon } from '../common';
+import { SearchOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom'
-import { Input, AutoComplete, Button } from 'antd';
+import { Form, Button, Select, Input } from 'antd';
 import './home.scss';
 
-// images
-import IconImage from '../../assets/images/icon.png';
+const { Option } = Select;
 
 const batlistdata = [
     {
         id: 1,
-        assetsleft: "Asset A",
-        assetslefticon: IconImage,
-        assetsright: "Asset B",
-        assetsrighticon: IconImage,
+        assetsleft: "Small Case",
+        assetslefticon: "edu",
+        assetsright: "Ethereum",
+        assetsrighticon: "eth",
         betpool: "245,000"
     },
     {
         id: 2,
-        assetsleft: "Asset A",
-        assetslefticon: IconImage,
-        assetsright: "Asset B",
-        assetsrighticon: IconImage,
+        assetsleft: "Ethereum",
+        assetslefticon: "eth",
+        assetsright: "Doge",
+        assetsrighticon: "doge",
         betpool: "245,000"
     },
     {
         id: 3,
-        assetsleft: "Asset A",
-        assetslefticon: IconImage,
-        assetsright: "Asset B",
-        assetsrighticon: IconImage,
+        assetsleft: "Small Case",
+        assetslefticon: "edu",
+        assetsright: "Ethereum",
+        assetsrighticon: "eth",
         betpool: "245,000"
     },
     {
         id: 4,
-        assetsleft: "Asset A",
-        assetslefticon: IconImage,
-        assetsright: "Asset B",
-        assetsrighticon: IconImage,
+        assetsleft: "Small Case",
+        assetslefticon: "edu",
+        assetsright: "Ethereum",
+        assetsrighticon: "eth",
         betpool: "245,000"
     },
     {
         id: 5,
-        assetsleft: "Asset A",
-        assetslefticon: IconImage,
-        assetsright: "Asset B",
-        assetsrighticon: IconImage,
+        assetsleft: "Small Case",
+        assetslefticon: "edu",
+        assetsright: "Ethereum",
+        assetsrighticon: "eth",
         betpool: "245,000"
     },
     {
         id: 6,
-        assetsleft: "Asset A",
-        assetslefticon: IconImage,
-        assetsright: "Asset B",
-        assetsrighticon: IconImage,
+        assetsleft: "Small Case",
+        assetslefticon: "edu",
+        assetsright: "Ethereum",
+        assetsrighticon: "eth",
         betpool: "245,000"
     }
 ]
 
 class HomeView extends Component {
+    state = {
+        items: [
+            { id: 1, name: "Ethereum", beticon: "eth" },
+            { id: 2, name: "XRP", beticon: "xrp" },
+            { id: 3, name: "Small Case", beticon: "edu" }
+        ]
+    };
     componentDidMount() {
         window.scrollTo(0, 0);
     }
     render() {
+        const { items } = this.state;
         return (
             <React.Fragment>
                 <div className="home-section">
-                    <Container>
-                        <Row>
-                            <Col lg="8">
-                                <div className="bat-lists home-upper">
-                                    {batlistdata.map(item => 
-                                    (
-                                    <div className="bat-box" key={item.id}>
-                                        <div className="box-upper">
-                                            <div className="assets-coloum">
-                                                <div className="icons"><img alt={item.assetslefticon} src={item.assetslefticon} /></div>
-                                                <p>{item.assetsleft}</p>
+                    <div className="home-upper">
+                        <Container>
+                            <Row>
+                                <Col lg="8" className="home-left">
+                                    <div className="bat-lists">
+                                        {batlistdata.map(item =>
+                                        (
+                                            <div className="bat-box" key={item.id}>
+                                                <SvgIcon className="relatives-icon" name="relative-icon" viewbox="0 0 31.972 24.973" />
+                                                <div className="box-upper">
+                                                    <div className="assets-coloum">
+                                                        <div className="icons"><i className={"cf cf-" + item.assetslefticon}></i></div>
+                                                        <p>{item.assetsleft}</p>
+                                                    </div>
+                                                    <div className="assets-coloum">
+                                                        <div className="icons"><i className={"cf cf-" + item.assetsrighticon}></i></div>
+                                                        <p>{item.assetsright}</p>
+                                                    </div>
+                                                </div>
+                                                <div className="box-bottom">
+                                                    Bet Pool : $ {item.betpool}
+                                                </div>
                                             </div>
-                                            <div className="assets-coloum">
-                                                <div className="icons"><img alt={item.assetsrighticon} src={item.assetsrighticon} /></div>
-                                                <p>{item.assetsright}</p>
-                                            </div>
-                                        </div>
-                                        <div className="box-bottom">
-                                            Bet Pool : $ {item.betpool}
-                                        </div>
+                                        ))
+                                        }
                                     </div>
-                                    ))
-                                    }
-                                </div>
-                                <Row className="align-items-center home-left-bttom">
-                                    <Col sm="4">
-                                        <h4>SEARCH FOR BETS</h4>
-                                    </Col>
-                                    <Col sm="8">
-                                        <Row>
-                                            <Col sm="6" className="mb-4">
-                                                <AutoComplete className="aut-search large"
-                                                    options={[{ value: 'Asset A' }, { value: 'Asset A1' }]}
-                                                >
-                                                    <Input.Search size="large" placeholder="ASSET A" />
-                                                </AutoComplete>
-                                            </Col>
-                                            <Col sm="6" className="mb-4"><Input className="ant-input-secondary bet-amount" size="large" placeholder="BET AMOUNT" /></Col>
-                                        </Row>
-                                        <Row>
-                                            <Col sm="6" className="mb-4">
-                                                <AutoComplete className="aut-search large"
-                                                    options={[{ value: 'Asset B' }, { value: 'Asset B1' }]}
-                                                >
-                                                    <Input.Search size="large" placeholder="ASSET B" />
-                                                </AutoComplete>
-                                            </Col>
-                                            <Col sm="6" className="mb-4"><Link to="/bet-list"><Button type="primary" size="large" block>SEARCH</Button></Link></Col>
-                                        </Row>
-                                    </Col>
-                                </Row>
-                            </Col>
-                            <Col lg="4">
-                                <div className="home-right">
-                                    <div></div>
-                                    <div className="create-bet-btn"><Link to="/create-bet"><Button type="primary" size="large" block>CREATE BET</Button></Link></div>
-                                </div>
-                            </Col>
-                        </Row>
-                    </Container>
+                                </Col>
+                                <Col lg="4" className="home-right">
+                                    <SvgIcon className="back-icon" name="relative-icon" viewbox="0 0 31.972 24.973" />
+                                    <div className="right-inner">
+                                        <h1>Bet with your <br /> favourite crypto</h1>
+                                        <p>One-click sign up and a simple funding process mean you can start betting in just five minutes. Choose from BTC, BCH, ETH, LINK, PAX, PAXG, USDT, USDC or DAI.</p>
+                                        <p>Even more multi-currency options available - now accepting Dogecoin betting.</p>
+                                        <div className="create-bet-btn"><Link to="/create-bet"><Button type="primary">CREATE BET</Button></Link></div>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </div>
+                    <div className="home-search-bet">
+                        <Container>
+                            <Row>
+                                <Col><h2>Search for bets</h2></Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <Form layout="inline">
+                                        <div className="searchbet-wrape">
+                                            <div className="bet1">
+                                                <Form.Item name="selectbet1">
+                                                    <Select id="imprintcolor1" className="bet-select" placeholder="Select" dropdownClassName="withwhite-bg" size="large">
+                                                        {items.map(item => (
+                                                            <Option value={item.id} key={item.id}>
+                                                                <i className={"cf cf-" + item.beticon}></i>
+                                                                {item.name}
+                                                            </Option>
+                                                        ))}
+                                                    </Select>
+                                                </Form.Item>
+                                            </div>
+                                            <div className="bet-icon">
+                                                <SvgIcon name="relative-icon" viewbox="0 0 31.972 24.973" />
+                                            </div>
+                                            <div className="bet2">
+                                                <Form.Item name="username">
+                                                    <Select id="selectbet2" className="bet-select" placeholder="Select" dropdownClassName="withwhite-bg" size="large">
+                                                        {items.map(item => (
+                                                            <Option value={item.id} key={item.id}>
+                                                                <i className={"cf cf-" + item.beticon}></i>
+                                                                {item.name}
+                                                            </Option>
+                                                        ))}
+                                                    </Select>
+                                                </Form.Item>
+                                            </div>
+                                            <div className="bet1-amount">
+                                                <Form.Item name="betamount">
+                                                    <Input placeholder="Bet Amount" suffix={"$"} />
+                                                </Form.Item>
+                                            </div>
+                                            <Link to="/bet-list"><Button type="secondary" icon={<SearchOutlined />}>Search</Button></Link>
+                                        </div>
+                                    </Form>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </div>
                 </div>
             </React.Fragment>
         )

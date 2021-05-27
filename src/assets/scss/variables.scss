@@ -3,36 +3,17 @@
 Capx
 *                                                           
 */ 
-
-// -------- Colors -----------
-// @primary-color: @blue-6;
-// @info-color: @blue-6;
-// @success-color: @green-6;
-// @processing-color: @blue-6;
-// @error-color: @red-6;
-// @highlight-color: @red-6;
-// @warning-color: @gold-6;
-// @normal-color: #d9d9d9;
+ 
 
 $white: #ffffff;
 $black: #000000;
 
-$primary-color: #000000; // primary color for all components
-$secondary-color: #A1C253; 
+$primary-color: #512FCF; // primary color for all components
+$secondary-color: #010142; 
 $success-color: #1db100;
 $warning-color: #faad14; // warning state color
 $error-color: #f5222d; // error state color
 
-$grey-btn-color: #737373;
-$input-light-grey-border: #B8B8B8;
-$input-grey-bg: #eeeeee;
-
-
-$body-background: #ffffff;
-$background-primary: #eeeeee;
-$background-secondary: #e4e4e4;
-$dark-border:#3C3C3C;
-$input-label-color:#929292;
 
 $font-family: 'AvertaStd';
 $font-size-base: 14px;
@@ -40,13 +21,13 @@ $font-size-xlg: $font-size-base + 4px; //18px
 $font-size-lg: $font-size-base + 2px; //16px
 $font-size-sm: $font-size-base - 2px; //12px
 
-$text-color-primary: #000000; // major text color
-$text-color-secondary: #929292; // secondary text color
+$text-color: #ffffff; // major text color
+$text-color-primary: #512FCF; // primary text color
+$text-color-secondary: #010142; // major text color
 $text-red: #d90a00; // Red text color
-$text-white: #ffffff; // white text color
 $link-color: $primary-color; // link color
-$disabled-color: rgba(0, 0, 0, 0.1); // disable state color
+$disabled-color: rgba($primary-color, 0.1); // disable state color
 $border-radius-base: 10px; // major border radius
-$border-color-base: $background-primary; // major border color
-$box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15); // major shadow for layers
+$border-color-base: #5B35E9;
+ 
 

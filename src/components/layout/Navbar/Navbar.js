@@ -5,9 +5,6 @@ import { NavLink, Link } from "react-router-dom";
 import { SvgIcon, Container } from '../../common';
 import './Navbar.scss';
 
-// imaport images
-import LogoImage from "../../../assets/images/logo.png";
-
 const { Sider } = Layout;
 
 const UpperMenu = ({ onClick }) => {
@@ -48,11 +45,9 @@ class Navbar extends Component {
         <Container>
           <div className="home-header">
             <div className="logo-wrapper">
-              <div className="logo">
-                <Link to="home">
-                  <img alt="Logo" src={LogoImage} />
-                </Link>
-              </div>
+              <Link className="logo" to="home">
+                <SvgIcon name="logo" viewbox="0 0 134 32.322" />
+              </Link>
             </div>
             <MediaQuery minDeviceWidth={992}>
               <div className="header-menus">
@@ -60,7 +55,7 @@ class Navbar extends Component {
               </div>
             </MediaQuery>
             <div className="header-right">
-              <Button type="primary">CONNECT WALLET</Button>
+              <Button type="primary" size="small">CONNECT WALLET <SvgIcon name="arrow-right" viewbox="0 0 10 17.984" /></Button>
             </div>
             <MediaQuery maxDeviceWidth={991}>
               <div className="siderbar-toggle" onClick={this.sidebarToggle}>

@@ -2,20 +2,21 @@
 
 .home-header-wrapper{
     width: 100%;
+    border-bottom: 1px solid $primary-color;
     @media screen and (max-width:991px){
         position: fixed;
         top: 0;
         width: 100%;
         z-index: 9;
-        background: $white;
+        background: $secondary-color;
     }
     .home-header{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 20px 0;
+        height: 62px;
         @media screen and (max-width:1199px){
-            padding:14px 16px;
+            padding:14px 0;
             justify-content: space-between;
         }
         .siderbar-toggle{
@@ -29,13 +30,13 @@
             top: 19px;
             z-index: 2;
             .icon{
-                fill: $secondary-color;
+                fill: $white;
                 width: 22px !important;
             }
         }
         & .logo-wrapper{
-            display: inline-flex;
-            align-items: flex-start;
+            display: flex;
+            align-items: center;
             justify-content: flex-start;     
             max-width: 154px;  
             @media screen and (max-width:991px){
@@ -43,7 +44,7 @@
             } 
             & .logo{
                 display: flex;
-                align-items: flex-start;
+                align-items: center;
                 justify-content: flex-start;
                 & img{
                     width: 100%;
@@ -54,6 +55,9 @@
                     height: auto;
                     @media screen and (max-width:991px){
                         width:120px;
+                    }
+                    @media screen and (max-width:567px){
+                        width:100px;
                     }
                 }
             }
@@ -77,12 +81,10 @@
                         background: none;
                         font-size: $font-size-base + 1;
                         letter-spacing: 1px;
-                        font-weight: 600;
                         a{
-                            color: $text-color-secondary;
-                            text-transform: uppercase;
+                            color: $text-color;
                             &.active{
-                                color: $text-color-primary;
+                                color: $primary-color;
                             }
                         }
                         &.ant-menu-item-selected {
@@ -103,17 +105,31 @@
         }
         & .header-right{
           margin-left: 30px;
+          .ant-btn{
+              display: flex;
+              align-items: center;
+              border-radius: 20px;
+              .icon{
+                  fill: $white;
+                  width: 10px;
+                  margin-left: 10px;
+              }
+          }
           @media screen and (max-width:991px){
               margin-left: 0;
               margin-right: 20px;
           }
           @media screen and (max-width:567px){
             .ant-btn{
-                padding: 0 18px;
-                font-size: $font-size-base - 2;
+                padding: 0 12px;
+                font-size: $font-size-base - 4;
                 margin-left: 0;
-                margin-right: 20px;
-                letter-spacing: 1px;
+                margin-right: 10px;
+                letter-spacing: 0;
+                .icon{
+                    width: 8px;
+                    margin-left: 6px;
+                }
             }
           }
         }
@@ -154,7 +170,7 @@
         position: relative;
         color: $text-color-primary;
         & .close{
-            fill: #dc0100;
+            fill: $white;
             width: 14px;
             position: absolute;
             top: 15px;
